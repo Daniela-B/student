@@ -4,23 +4,31 @@ from student import student
 def crea_estudiantes(count_estudiantes):
 	count = 0
 	list_students = []
+	list_ages = []
 	
 	while count < int(count_estudiantes):
 
-		student_code = input("dame la matricula: ")
-		student_name = input("dame el nombre: ")
-		student_age = input("dame la edad: ")
-		student_gender = input("dame el genero: ")
-		student_carreer = input("dame la carrera: ")
+		student_code = input("Dame la matricula: ")
+		student_name = input("Dame el nombre: ")
+		student_age = input("Dame la edad: ")
+		student_gender = input("Dame el genero: ")
+		student_carreer = input("Dame la carrera: ")
 		
 		list_students.append(student(student_code,student_name,student_age,student_gender,student_carreer))
-		
+		list_ages.append(student_age)
+
 		count = count + 1
 	return list_students
 
 
-def ordena_edades(list_students):
-	print ("metodo vacio")
+def ordena_edades(list_ages):
+	for recorrer in range(1,len(list_ages)):
+	 for posicion in range (len(list_ages) - recorrer):
+	  if list_ages [posicion] > list_ages[posicion + 1]:
+	   temp = list_ages[posicion]
+	   list_ages[posicion] = list_ages[posicion + 1]
+	   list_ages[posicion+1] = temp
+	print list_ages[:]
 
 def separa_generos(list_students):
 	print ("metodo vacio")
@@ -39,7 +47,7 @@ def main():
 			list_stud = crea_estudiantes(count_x)
 
 		if options == "2":
-			print("ordena edades")
+			ordena_edades(list_ages)
 
 		if options == "3":
 			print("separa generos")
