@@ -24,4 +24,3 @@ class student:
 
 	def get_name(self):
 		return ("nombre: " + self.name)
-		
