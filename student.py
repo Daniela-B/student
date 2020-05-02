@@ -18,4 +18,10 @@ class student:
 	
 	def get_age(self):
 		return ("edad: " + self.age)
+
+	def get_gender(self):
+		return("genero: " + self.gender)
+
+	def get_name(self):
+		return ("nombre: " + self.name)
 		
